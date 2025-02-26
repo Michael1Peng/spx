@@ -1,29 +1,36 @@
-# spx
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-> _**spx** - **s**cheme **p**ro**x**y_
+## Getting Started
 
-A simple tool that allows naive proxying of urls with custom schemes.
-Useful for cases when you don't have an ability to use original url, because of some limitations (ex. urls on [**Notion**](https://notion.so/product))
+First, run the development server:
 
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/2182108/91936193-1107f480-ecf8-11ea-873f-c0c3998292af.png" />
-</div>
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-### Usage
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The tool is quite simple to use:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-1. Open page: [spx.now.sh](https://spx.now.sh)
-2. Provide url with custom scheme (ex. `steam://run/855860`)
-3. Choose automatic (open by default), or manual mode (visitor would need to click link in the browser)
-4. Press "Copy" - a generated url will be copied to the Clipboard.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### Deploying
+## Learn More
 
-You can deploy the tool on your own account by clicking this button: 
+To learn more about Next.js, take a look at the following resources:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Finlife%2Fspx)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Privacy
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Please be advised that the product uses Google Analytics to track clicks onto generated links for product learning and improvement purposes. If that is something you do not want to happen, please refrain from using the product.
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

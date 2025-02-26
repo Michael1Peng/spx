@@ -1,0 +1,35 @@
+{
+    "mcpServers": {
+      "github.com/modelcontextprotocol/servers/tree/main/src/puppeteer": {
+        "command": "docker",
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "--init",
+          "-e",
+          "DOCKER_CONTAINER=true",
+          "mcp/puppeteer"
+        ],
+        "disabled": false,
+        "autoApprove": [
+          "puppeteer_navigate",
+          "puppeteer_screenshot"
+        ]
+      },
+      "github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking": {
+        "command": "docker",
+        "args": [
+          "run",
+          "--rm",
+          "-i",
+          "mcp/sequentialthinking"
+        ],
+        "disabled": false,
+        "autoApprove": [
+          "sequential_thinking",
+          "sequentialthinking"
+        ]
+      }
+    }
+  }
