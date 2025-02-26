@@ -1,19 +1,35 @@
 'use client';
 
-import { useParams, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, Suspense } from 'react';
+import { redirectToExternalUrl } from '../../../utils/redirect';
 
-export default function AutoPage() {
+/**
+ * AutoPage component handles automatic redirection to external URLs
+ * and attempts to close the window after redirection.
+ */
+function AutoContent() {
   const searchParams = useSearchParams();
   const url = searchParams.get('url');
 
   useEffect(() => {
-    if (url) {
-      console.log('[info] redirecting user to url:', url);
-      window.location.href = url;
-    }
+    if (!url) return;
+    
+    // Redirect and get cleanup function
+    const cleanup = redirectToExternalUrl(url);
+    
+    // Return cleanup function to clear timeout
+    return cleanup;
   }, [url]);
 
   // Return empty div while redirecting
   return <div />;
+}
+
+export default function AutoPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AutoContent />
+    </Suspense>
+  );
 }

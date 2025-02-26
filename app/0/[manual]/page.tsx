@@ -3,10 +3,15 @@
 import { useParams } from 'next/navigation';
 import Footer from '../../../components/Footer';
 
+/**
+ * ManualPage component displays a clickable link for the user to manually navigate to
+ * @returns React component
+ */
 export default function ManualPage() {
   const params = useParams();
   const url = params.manual as string;
 
+  // Return empty div if no URL is provided
   if (!url) {
     return <div />;
   }
