@@ -17,7 +17,7 @@ export function redirectToExternalUrl(url: string): () => void {
   redirectionTimer = setTimeout(() => {
     console.log('[info] closing window');
     attemptToCloseWindow();
-  }, 500);
+  }, 5000);
   
   // Return cleanup function
   return () => clearTimeout(redirectionTimer);
